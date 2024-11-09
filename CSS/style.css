@@ -1,0 +1,79 @@
+:root {
+    /* Farben für das Design */
+    --background: #f5f5fa;
+    --navbar: #323432;
+    --text: #323432;
+    --text-light: #f5f5fa;
+    --primary: #ffd000;
+    --accent: #f5cc5c;
+}
+
+* {
+    /* Ist gut (Keine ahnung warum) */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Hintergrundfarbe der Seite */
+    background-color: var(--background);
+}
+
+header {
+    /* Stile für die Navigationsleiste */
+    position: fixed;    /* Fixiert die Navigation oben */
+    width: 100%;        /* Füllt die gesamte Seitenbreite aus */
+    padding-top: 10px;  /* Abstand nach oben */
+    background: var(--navbar); /* Hintergrundfarbe der Navigation */
+}
+
+nav {
+    /* Styling für die Navigations Elemente */
+    display: flex;   /* Flexbox für flexible Anordnung */
+    gap: 40px;       /* Abstand zwischen Navigationselementen */
+}
+
+.navigation_section {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.align_left {
+    /* Linke Navigation */
+    padding-left: 20px;
+    justify-content: flex-start; /* Startet Elemente linksbündig */
+}
+
+.align_right {
+    /* Rechte Navigation */
+    padding-right: 20px;
+    justify-content: flex-end;   /* Positioniert Elemente rechtsbündig */
+}
+
+.navigation_link {
+    /* Links in der Navigation */
+    text-decoration: none;
+}
+
+a .navigation_text {
+    font-size: 16px;
+    padding-bottom: 5px;
+    color: var(--text-light);
+}
+
+a:hover .navigation_text {
+    color: var(--accent);
+}
+
+a .navigation_line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--navbar);
+}
+
+a:hover .navigation_line {
+    background-color: var(--accent);
+}
+
