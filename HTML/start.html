@@ -1,65 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wuuting</title>
-    <link rel="stylesheet" href="../CSS/style.css"> <!-- Verknüpfung mit CSS-Datei -->
-</head>
-<body>
-    <!-- Die erste Seite ist die "Über uns" Seite. Hier sind noch keine Produkte."-->
-    <header>
-        <nav>
-            <!-- Linke Seite der Navigation -->
-            <div class="align_left navigation_section">
-                <!-- Links zu den einzelnen Kategorien -->
-                <a href="#" class="navigation_link">
-                    <p class="navigation_text">Bundles</p>
-                    <div class="navigation_line"></div>
-                </a>
-                <a href="#" class="navigation_link">
-                    <p class="navigation_text">Konfigurator</p>
-                    <div class="navigation_line"></div>
-                </a>
-                <a href="#" class="navigation_link">
-                    <p class="navigation_text">Tastaturen</p>
-                    <div class="navigation_line"></div>
-                </a>
-                <a href="#" class="navigation_link">
-                    <p class="navigation_text">Switches</p>
-                    <div class="navigation_line"></div>
-                </a>
-                <a href="#" class="navigation_link">
-                    <p class="navigation_text">Tasten</p>
-                    <div class="navigation_line"></div>
-                </a>
-                <a href="#" class="navigation_link">
-                    <p class="navigation_text">Zubehör</p>
-                    <div class="navigation_line"></div>
-                </a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Link zu "font-awesome" für das Balken Menu Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+              integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Wuuting</title>
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <!-- Normale Navbar -->
+            <div class="logo"><a href="#">Wuuting</a></div>
+            <ul class="links">
+                <li><a href="#">Bundles</a></li>
+                <li><a href="#">Tastaturen</a></li>
+                <li><a href="#">Tasten</a></li>
+                <li><a href="#">Switches</a></li>
+                <li><a href="#">Zubehör</a></li>
+            </ul>
+            <a href="#" class="action_btn">Konfigurator</a>
+            <div class="toggle_btn">
+                <!-- So das Icons einzufügen ist besser, da man es einfacher einfärben kann -->
+                <i class="fa-solid fa-bars"></i>
             </div>
-            <!-- Rechte Seite der Navigation -->
-            <div class="align_right navigation_section">
-                <a href="#" class="navigation_link">
-                    <img src="../Icons/Info.svg" alt="Info">
-                </a>
-                <!-- Todo: Wenn noch Zeit oder für die Zukunft mal, Profil(Account)? Warenkorb? -->
+            <!-- Kleine Dropdown Navbar -->
+            <div class="dropdown_menu">
+                <ul>
+                    <li><a href="#">Bundles</a></li>
+                    <li><a href="#">Tastaturen</a></li>
+                    <li><a href="#">Tasten</a></li>
+                    <li><a href="#">Switches</a></li>
+                    <li><a href="#">Zubehör</a></li>
+                    <li><a href="#" class="action_btn">Konfigurator</a></li>
+                </ul>
             </div>
         </nav>
-    </header>
-    <div class="products_container">
-        <div class="product_container">
-            <div class="product_container_product_background">
-                <img src="../Bilder/Wooting-60HE.png" width="60%" style="border: 1px solid red">
-            </div>
-        </div>
-        <div class="product_container">
-            <div class="product_container_product_background">
-                <img src="../Bilder/Wooting-80HE.png" width="60%" style="border: 1px solid red">
-            </div>
-        </div>
-        <div class="product_container">Hi</div>
-        <div class="product_container">Hi</div>
-    </div>
-</body>
+        <!-- Javascript verlinkung -->
+        <script src="../JavaScript/script.js"></script>
+    </body>
 </html>
+

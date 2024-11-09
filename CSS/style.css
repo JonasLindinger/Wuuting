@@ -1,113 +1,143 @@
 :root {
-    /* Farben für das Design */
     --background: #f5f5fa;
-    --navbar: #323432;
+    --navbar: #D9D9D9;
     --text: #323432;
-    --text-light: #f5f5fa;
     --primary: #ffd000;
     --secondary: #323432;
     --accent: #f5cc5c;
+    --dropdown-background-overlay: rgba(0, 0, 0, 0.3);
 }
 
 * {
-    /* Ist gut (Keine ahnung warum) */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
-    /* Hintergrundfarbe der Seite */
     background-color: var(--background);
 }
 
-header {
-    /* Stile für die Navigationsleiste */
-    /* position: fixed; <= ist komisch   /* Fixiert die Navigation oben */
-    width: 100%;        /* Füllt die gesamte Seitenbreite aus */
-    padding-top: 10px;  /* Abstand nach oben */
-    background: var(--navbar); /* Hintergrundfarbe der Navigation */
+li {
+    list-style: none;
 }
 
-nav {
-    /* Styling für die Navigations Elemente */
-    display: flex;   /* Flexbox für flexible Anordnung */
-    gap: 40px;       /* Abstand zwischen Navigationselementen */
-}
-
-.navigation_section {
-    display: flex;
-    gap: 40px;
-    width: 100%;
-}
-
-.align_left {
-    /* Linke Navigation */
-    padding-left: 20px;
-    justify-content: flex-start; /* Startet Elemente linksbündig */
-}
-
-.align_right {
-    /* Rechte Navigation */
-    padding-right: 20px;
-    justify-content: flex-end;   /* Positioniert Elemente rechtsbündig */
-}
-
-.navigation_link {
-    /* Links in der Navigation */
+a {
     text-decoration: none;
+    color: var(--text);
+    font-size: 1rem;
 }
 
-a .navigation_text {
-    font-size: 16px;
-    padding-bottom: 5px;
-    color: var(--text-light);
-}
-
-a:hover .navigation_text {
+a:hover {
     color: var(--accent);
 }
 
-a .navigation_line {
+.navbar {
     width: 100%;
-    height: 2px;
-    background-color: var(--navbar);
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-a:hover .navigation_line {
-    background-color: var(--accent);
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.products_container {
-    width: 80%;
-    height: 600px;
-
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-top: 100px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, 1fr); /* 2 rows */
-
-    gap: 20px;
+.navbar .links {
+    display: flex;
+    gap: 2rem;
 }
 
-.product_container {
-    background-color: var(--primary);
-    width: 100%;
-    height: 100%;
+.navbar .toggle_btn {
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: orange;
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
     border-radius: 20px;
-
-    padding: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: scale 0.2s ease;
 }
 
-.product_container_product_background {
-    width: 100%;
-    height: 60%;
-    background-color: var(--secondary);
+.action_btn:hover {
+    scale: 1.05;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+.dropdown_menu {
+    display: none; /* Keep hidden initially */
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background-color: var(--dropdown-background-overlay);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
 }
 
+.dropdown_menu.open {
+    display: block; /* Show the dropdown */
+    height: auto;
+    opacity: 1;
+}
+
+.dropdown_menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media(max-width: 1200px) {
+    .navbar .links {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: none; /* Keep hidden, will be toggled by JS */
+    }
+
+    .navbar .dropdown_menu .action_btn {
+        display: block; /* Display action button in dropdown */
+    }
+
+    /* Regulierer Button in Navbar ausblenden, wenn Dropdown aktiv ist */
+    .navbar .action_btn {
+        display: none; /* Regulierer Button ausblenden */
+    }
+
+    /* Wenn das Dropdown-Menü offen ist, den regulären Button ausblenden */
+    .dropdown_menu.open + .action_btn {
+        display: none; /* Sicherstellen, dass der Button nicht im Navbar angezeigt wird */
+    }
+}
