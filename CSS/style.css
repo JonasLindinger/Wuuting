@@ -5,6 +5,7 @@
     --text: #323432;
     --text-light: #f5f5fa;
     --primary: #ffd000;
+    --secondary: #323432;
     --accent: #f5cc5c;
 }
 
@@ -22,7 +23,7 @@ body {
 
 header {
     /* Stile für die Navigationsleiste */
-    position: fixed;    /* Fixiert die Navigation oben */
+    /* position: fixed; <= ist komisch   /* Fixiert die Navigation oben */
     width: 100%;        /* Füllt die gesamte Seitenbreite aus */
     padding-top: 10px;  /* Abstand nach oben */
     background: var(--navbar); /* Hintergrundfarbe der Navigation */
@@ -75,5 +76,38 @@ a .navigation_line {
 
 a:hover .navigation_line {
     background-color: var(--accent);
+}
+
+.products_container {
+    width: 80%;
+    height: 600px;
+
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+
+    gap: 20px;
+}
+
+.product_container {
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+    padding: 20px;
+}
+
+.product_container_product_background {
+    width: 100%;
+    height: 60%;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
