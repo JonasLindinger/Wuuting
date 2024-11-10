@@ -156,7 +156,7 @@ li {
     position: absolute;
     top: 6%;
     left: 50%;
-    transform: translateX(-50%); /* Mach, das der Text wirklich zentriert is und nicht erst bei der mitte anfängt. */
+    transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
     color: var(--text);
     padding: 10px;
     font-size: 1rem;
