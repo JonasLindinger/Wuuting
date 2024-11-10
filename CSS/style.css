@@ -247,6 +247,28 @@ footer {
     color: var(--primary); /* Yellow hover color */
 }
 
+/* Style für Datenschutzerklärung etc. section */
+.info_header {
+    text-align: center;          /* Center the header */
+    font-size: 2rem;             /* Larger font size */
+    color: var(--text);          /* Use defined text color */
+    margin-top: 30px;            /* Add space above */
+    margin-bottom: 20px;         /* Space below */
+}
+
+.info_text {
+    max-width: 800px;            /* Limit the width of the text */
+    margin: 0 auto;              /* Center the text container */
+    font-size: 1.1rem;           /* Slightly larger font size */
+    line-height: 1.6;            /* Improve readability */
+    color: var(--text);          /* Use defined text color */
+    padding: 10px 20px;          /* Add padding around the text */
+    background-color: var(--background);  /* Use background color */
+    border-radius: 10px;         /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .navbar .links, .navbar > .action_btn {
