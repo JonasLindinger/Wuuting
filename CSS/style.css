@@ -127,7 +127,8 @@ li {
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 spalten */
-    gap: 3%;
+    column-gap: 3%;
+    row-gap: 40px;
 }
 
 .product {
@@ -159,6 +160,7 @@ li {
     transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
     color: var(--text);
     padding: 10px;
+    /* Todo: Text größe verbessern auf kleinerem Screen */
     font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
