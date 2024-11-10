@@ -82,23 +82,23 @@ a:hover {
 }
 
 .dropdown_menu {
-    display: none; /* Keep hidden initially */
     position: absolute;
     right: 2rem;
     top: 60px;
-    height: 0;
     width: 300px;
     background-color: var(--dropdown-background-overlay);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: opacity 0.1s ease, transform 0.1s ease; /* Extended duration to 0.5s */
 }
 
 .dropdown_menu.open {
-    display: block; /* Show the dropdown */
-    height: auto;
     opacity: 1;
+    transform: scaleY(1);
 }
 
 .dropdown_menu ul {
@@ -115,30 +115,22 @@ a:hover {
 
 /* Responsive Design */
 @media(max-width: 992px) {
-    .navbar .links {
-        display: none;
+    .navbar .links,
+    .navbar > .action_btn {
+        display: none; /* Hide the main navbar links and button */
     }
 
     .navbar .toggle_btn {
-        display: block;
+        display: block; /* Show the toggle button for small screens */
     }
 
-    .dropdown_menu {
-        display: none; /* Keep hidden, will be toggled by JS */
+    .dropdown_menu.open {
+        display: block; /* Show dropdown when open */
     }
 
-    .navbar .dropdown_menu .action_btn {
-        display: block; /* Display action button in dropdown */
-    }
-
-    /* Regulierer Button in Navbar ausblenden, wenn Dropdown aktiv ist */
-    .navbar .action_btn {
-        display: none; /* Regulierer Button ausblenden */
-    }
-
-    /* Wenn das Dropdown-Menü offen ist, den regulären Button ausblenden */
-    .dropdown_menu.open + .action_btn {
-        display: none; /* Sicherstellen, dass der Button nicht im Navbar angezeigt wird */
+    /* Ensure the Konfigurator button inside the dropdown is visible */
+    .dropdown_menu .action_btn {
+        display: block; /* Show Konfigurator button only inside dropdown on small screens */
     }
 }
 
