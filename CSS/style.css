@@ -1,13 +1,13 @@
+/* Farbvariablen */
 :root {
     --background: #f5f5fa;
     --navbar: #D9D9D9;
     --text: #323432;
     --primary: #ffd000;
-    --secondary: #323432;
     --accent: #f5cc5c;
-    --dropdown-background-overlay: rgba(0, 0, 0, 0.3);
 }
 
+/* Grundstil (keine ahnung warum man das mit margin, padding und box-sizing machen muss.) */
 * {
     margin: 0;
     padding: 0;
@@ -17,20 +17,6 @@
 
 body {
     background-color: var(--background);
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 1rem;
-}
-
-a:hover {
-    color: var(--accent);
 }
 
 .navbar {
@@ -65,35 +51,51 @@ a:hover {
     color: var(--text);
     padding: 0.5rem 1rem;
     border: none;
-    outline: none;
-    cursor: pointer;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: bold;
-    transition: scale 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .action_btn:hover {
-    scale: 1.05;
+    transform: scale(1.05);
 }
 
 .action_btn:active {
-    scale: 0.95;
+    transform: scale(0.95);
 }
 
+/* Links ohne Unterstreichung */
+a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* Listenelemente ohne Punkte */
+li {
+    list-style-type: none;
+}
+
+
+/* Dropdown-Menü */
 .dropdown_menu {
     position: absolute;
     right: 2rem;
     top: 60px;
     width: 300px;
-    background-color: var(--dropdown-background-overlay);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
-    transition: opacity 0.1s ease, transform 0.1s ease; /* Extended duration to 0.5s */
+    transition: opacity 0.1s ease, transform 0.1s ease;
 }
 
 .dropdown_menu.open {
@@ -109,32 +111,20 @@ a:hover {
 .dropdown_menu li {
     padding: 0.7rem;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 /* Responsive Design */
-@media(max-width: 992px) {
-    .navbar .links,
-    .navbar > .action_btn {
-        display: none; /* Hide the main navbar links and button */
+@media (max-width: 992px) {
+    .navbar .links, .navbar > .action_btn {
+        display: none;
     }
-
     .navbar .toggle_btn {
-        display: block; /* Show the toggle button for small screens */
-    }
-
-    .dropdown_menu.open {
-        display: block; /* Show dropdown when open */
-    }
-
-    /* Ensure the Konfigurator button inside the dropdown is visible */
-    .dropdown_menu .action_btn {
-        display: block; /* Show Konfigurator button only inside dropdown on small screens */
+        display: block;
     }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
     .dropdown_menu {
         left: 2rem;
         width: unset;
