@@ -19,6 +19,11 @@ body {
     background-color: var(--background);
 }
 
+/* Navbar Hintergrundfarbe */
+header {
+    background-color: var(--navbar);
+}
+
 .navbar {
     width: 100%;
     height: 60px;
@@ -81,14 +86,13 @@ li {
     list-style-type: none;
 }
 
-
 /* Dropdown-Menü */
 .dropdown_menu {
     position: absolute;
     right: 2rem;
     top: 60px;
     width: 300px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--navbar);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -96,6 +100,7 @@ li {
     transform: scaleY(0);
     transform-origin: top;
     transition: opacity 0.1s ease, transform 0.1s ease;
+    z-index: 1000; /* z-index , damit es immer über allem steh und nie verdeckt wird */
 }
 
 .dropdown_menu.open {
@@ -114,6 +119,63 @@ li {
     justify-content: center;
 }
 
+/* Produkte */
+.product-container {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 spalten */
+    gap: 3%;
+}
+
+.product {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product p {
+    position: absolute;
+    bottom: 6%;
+    left: 6%;
+    color: var(--text);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.product .buy_btn {
+    position: absolute;
+    bottom: 9%;
+    right: 6%;
+    background-color: orange;
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.product .buy_btn:hover {
+    transform: scale(1.05);
+    color: var(--accent);
+}
+
+.product .buy_btn:active {
+    transform: scale(0.95);
+}
+
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .navbar .links, .navbar > .action_btn {
@@ -121,6 +183,10 @@ li {
     }
     .navbar .toggle_btn {
         display: block;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
     }
 }
 

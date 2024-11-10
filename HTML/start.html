@@ -12,30 +12,40 @@
     </head>
     <body>
         <!-- Navigationsleiste -->
-        <nav class="navbar">
-            <div class="logo"><a href="#">Wuuting</a></div>
-            <ul class="links">
-                <li><a href="#">Bundles</a></li>
-                <li><a href="#">Tastaturen</a></li>
-                <li><a href="#">Tasten</a></li>
-                <li><a href="#">Switches</a></li>
-                <li><a href="#">Zubehör</a></li>
-            </ul>
-            <a href="#" class="action_btn">Konfigurator</a>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="dropdown_menu">
-                <ul>
+        <header>
+            <nav class="navbar">
+                <!-- Logo immer zu sehen-->
+                <div class="logo"><a href="#">Wuuting</a></div>
+                <!-- Normales menu (standardmäßig zusehen, außer wenn der screen zu klein ist.) -->
+                <ul class="links">
                     <li><a href="#">Bundles</a></li>
-                    <li><a href="#">Tastaturen</a></li>
+                    <li><a href="tastaturen.html">Tastaturen</a></li>
                     <li><a href="#">Tasten</a></li>
                     <li><a href="#">Switches</a></li>
                     <li><a href="#">Zubehör</a></li>
-                    <li><a href="#" class="action_btn">Konfigurator</a></li>
                 </ul>
-            </div>
-        </nav>
+                <a href="#" class="action_btn">Konfigurator</a>
+
+                <!-- Mobile menu button und menu alternative(dropdown) (nicht immer zu sehen dank CSS) -->
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="dropdown_menu">
+                    <ul>
+                        <li><a href="#">Bundles</a></li>
+                        <li><a href="tastaturen.html">Tastaturen</a></li>
+                        <li><a href="#">Tasten</a></li>
+                        <li><a href="#">Switches</a></li>
+                        <li><a href="#">Zubehör</a></li>
+                        <li><a href="#" class="action_btn">Konfigurator</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Website -->
+
+        <!-- JavaScript -->
         <script src="../JavaScript/script.js"></script>
     </body>
 </html>
