@@ -6,6 +6,15 @@
     --text: #323432;
     --primary: #ffd000;
     --accent: #f5cc5c;
+    --footer: #323432;
+}
+
+/* Keine ahnung */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Grundstil (keine ahnung warum man das mit margin, padding und box-sizing machen muss.) */
@@ -122,14 +131,12 @@ li {
 
 /* Produkte */
 .product-container {
-    width: 60%;
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 100px;
+    flex: 1;  /* Muss da sein keine ahnung */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 spalten */
-    column-gap: 3%;
-    row-gap: 40px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    width: 60%;
+    margin: 100px auto;
+    gap: 40px;
 }
 
 .product {
@@ -190,6 +197,55 @@ li {
     transform: scale(0.95);
 }
 
+.footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Stile für die Social Media Links */
+.socials {
+    list-style: none;           /* Entfernt die Standard-Punkte */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.socials li a {
+    color: #ffd000;             /* Farbe der Social-Icons */
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.socials li a:hover {
+    color: #f5cc5c;             /* Farbe beim Hover über den Icons */
+}
+
+/* Fußzeilenboden */
+footer {
+    background-color: var(--footer);
+    color: var(--background);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom a {
+    color: var(--background);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: var(--primary); /* Yellow hover color */
+}
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -202,6 +258,14 @@ li {
 
     .product-container {
         grid-template-columns: repeat(1, 1fr); /* 1 column */
+    }
+
+    .footer-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .socials li a {
+        font-size: 1.2rem;
     }
 }
 
