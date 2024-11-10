@@ -141,13 +141,25 @@ li {
     height: auto;
 }
 
-.product p {
+.product .price {
     position: absolute;
     bottom: 6%;
     left: 6%;
     color: var(--text);
     padding: 10px;
     font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.product .name {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%); /* Mach, das der Text wirklich zentriert is und nicht erst bei der mitte anfängt. */
+    color: var(--text);
+    padding: 10px;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 5px;
 }
