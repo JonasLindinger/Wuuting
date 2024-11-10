@@ -114,7 +114,7 @@ a:hover {
 }
 
 /* Responsive Design */
-@media(max-width: 1200px) {
+@media(max-width: 992px) {
     .navbar .links {
         display: none;
     }
@@ -139,5 +139,12 @@ a:hover {
     /* Wenn das Dropdown-Menü offen ist, den regulären Button ausblenden */
     .dropdown_menu.open + .action_btn {
         display: none; /* Sicherstellen, dass der Button nicht im Navbar angezeigt wird */
+    }
+}
+
+@media(max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
     }
 }

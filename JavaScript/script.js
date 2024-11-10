@@ -7,5 +7,7 @@ toggleBtn.onclick = function() {
 
     // Icon updaten
     const isOpen = dropDownMenu.classList.contains("open");
+
+    // Turnery Operator gibt es anscheinend auch in JavaScript
     toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
 }
