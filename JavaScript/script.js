@@ -19,3 +19,14 @@ window.addEventListener("resize", function () {
         toggleBtnIcon.classList = "fa-solid fa-bars";
     }
 });
+
+// Suchleiste
+const products = document.querySelectorAll(".product");
+const searchbar = document.querySelector(".searchbar");
+
+if (products != null) {
+    for (var i = 0; i < products.length; i++) {
+        const productName = products[i].getElementsByClassName("name").item(0).textContent;
+        console.log(productName);
+    }
+}
