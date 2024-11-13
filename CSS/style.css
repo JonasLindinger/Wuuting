@@ -417,6 +417,14 @@ footer {
         display: flex;
         margin-left: 0;
     }
+
+    .searchbar {
+        width: 100%;
+    }
+
+    .searchbar input {
+        width: 96%;
+    }
 }
 
 @media (max-width: 576px) {
