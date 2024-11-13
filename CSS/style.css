@@ -244,7 +244,7 @@ li .price {
     transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
     color: var(--text);
     padding: 10px;
-    font-size: 1vw;
+    font-size: 0.8vw;
     font-weight: bold;
     border-radius: 5px;
 }
@@ -426,7 +426,7 @@ footer {
     }
 
     .product .name {
-        font-size: 2vw;
+        font-size: 1.6vw;
     }
 }
 
@@ -434,9 +434,5 @@ footer {
     .dropdown_menu {
         left: 2rem;
         width: unset;
-    }
-
-    .product .name {
-        font-size: 3vw;
     }
 }
