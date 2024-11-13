@@ -18,12 +18,11 @@
             <div class="logo"><a href="start.html">Wuuting</a></div>
             <!-- Normales menu (standardmäßig zusehen, außer wenn der screen zu klein ist.) -->
             <ul class="links">
-                <li><a href="#">Tastaturen</a></li>
+                <li><a href="keyboards.html">Tastaturen</a></li>
                 <li><a href="keycaps.html">Tasten</a></li>
                 <li><a href="switches.html">Switches</a></li>
                 <li><a href="accessoires.html">Zubehör</a></li>
             </ul>
-            <!-- Statt Konfigurator ein Kontakt button => sieht gut aus und ist besser als alles immer ans impressum zu verweisen.-->
             <a href="#" class="action_btn">Konfigurator</a>
             <!-- Suche -->
             <div class="searchbar_container">
@@ -35,15 +34,14 @@
                     </input>
                 </div>
             </div>
-
-
+        
             <!-- Mobile menu button und menu alternative(dropdown) (nicht immer zu sehen dank CSS) -->
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
             <div class="dropdown_menu">
                 <ul>
-                    <li><a href="#">Tastaturen</a></li>
+                    <li><a href="keyboards.html">Tastaturen</a></li>
                     <li><a href="keycaps.html">Tasten</a></li>
                     <li><a href="switches.html">Switches</a></li>
                     <li><a href="accessoires.html">Zubehör</a></li>
@@ -51,38 +49,58 @@
                 </ul>
             </div>
         </nav>
-    </header>
+        </header>
         <!-- Website -->
-        <div class="product-container">
-            <div class="product">
-                <img src="../Bilder/Keyboards/Wooting-60-HE.png" width="100%">
-                <p class="name">Wuuting 60 HE</p>
-                <p class="price">189.99€ </p>
-                <a href="Product-Wooting-60-HE.html" class="buy_btn">Kaufen</a>
-            </div>
-            <div class="product">
-                <img src="../Bilder/Keyboards/Wooting-80-HE.png" width="100%">
-                <p class="name">Wuuting 80 HE</p>
-                <p class="price">219.99€</p>
-                <a href="Product-Wooting-80-HE.html" class="buy_btn">Kaufen</a>
-            </div>
-            <div class="product">
-                <img src="../Bilder/Keyboards/Wooting-UwU.png" width="100%">
-                <p class="name">Wuuting UwU HE</p>
-                <p class="price">39.99€</p>
-                <a href="Product-Wooting-UwU.html" class="buy_btn">Kaufen</a>
-            </div>
-            <div class="product">
-                <img src="../Bilder/Keyboards/Wooting-two-HE.png" width="100%">
-                <p class="name">Wuuting two HE</p>
-                <p class="price">199.99€</p>
-                <a href="Product-Wooting-two.html" class="buy_btn">Kaufen</a>
+        <div class="inspection">
+            <!-- Todo: Alle klassen umbenennen, dass sie gleich heißen also statt - _ oder anderstrum -->
+            <!-- Bild mit text neben dran. -->
+            <div class="text-next-to-inspection">
+                <!-- Bild -->
+                <div class="inspection-image">
+                    <img src="../Bilder/Keycaps/Wooting-wave-blue-keycaps.png" width="100%">
+                </div>
+                <ul>
+                    <!-- 1. Reihe (Name) -->
+                    <li><p class="name">Wuuting Wave Blau</p></li>
+                    <!-- Todo: 2. Reihe Daten -->
+                    <!-- 3. Reihe (Preis + Kontakt button) -->
+                    <li class="info_text">
+                        Diese PBT-Tastenkappen wurden einem 5-seitigen Farbstoff-Sublimationsverfahren unterzogen, das auch als inverse Farbstoff-Sublimation bezeichnet wird. Die originalen weißen PBT-Keycaps werden mit einem grafischen Farbstoff durchtränkt. Dadurch verschmilzt die PBT-Kunststoffoberfläche mit dem Farbstoff, so dass die Langlebigkeit der PBT-Keycaps auch nach intensivem Gebrauch erhalten bleibt, ohne dass die Grafik verloren geht. Die Linien und Wellen auf den Tastenkappen stellen eine magnetische Welle dar. Sie sind schräg aufgedruckt, damit sie sich aus der Benutzerperspektive aneinander ausrichten und nicht von oben nach unten.
+                    </li>
+                    <li class="info_text">
+                        Um sicherzustellen, dass Sie immer wissen, was was ist, gibt es Legenden auf der Vorderseite der Tastenkappen, und die Oberseite ist völlig sauber.
+                    </li>
+                    <li class="info_text">
+                        Spezifikationen:
+                    </li>
+                    <li class="info_text">
+                        61 Tastenkappen für 60% Tastaturen
+                    </li>
+                    <li class="info_text">
+                        Cherry profile
+                    </li>
+                    <li class="info_text">
+                        5-seitige Farbstoffsublimation
+                    </li>
+                    <li class="info_text">
+                        HINWEIS:
+                    </li>
+                    <li class="info_text">
+                        Wenn Sie eine LED pro Taste haben und die Helligkeit auf den höchsten Wert einstellen, werden die gelben Tastenkappen durchscheinend. Wenn wir mehr lichtblockierendes Material hinzufügen würden, würden die schwarzen Farben mehr grau werden. Wir haben ein gesundes Gleichgewicht gefunden.
+                    </li>
+                    <li class="price_info">
+                        <p class="price">54.99€</p>
+                        <!-- Todo: Kontakt oder Impressum verlinken -->
+                        <a href="impressum.html" class="buy_btn">Kontakt</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <!-- JavaScript -->
         <script src="../JavaScript/script.js"></script>
         <!-- Todo: Impressum und Dartenschutz sowie andere rechtliche dinge -->
+    <!-- Todo: Impressum und Dartenschutz sowie andere rechtliche dinge -->
     <footer>
         <div class="footer-content">
             <h3>Wuuting</h3>
@@ -95,6 +113,7 @@
             </ul>
         </div>
         <div class="footer-bottom">
+            <!-- &copy; => icon -->
             <p>&copy; 2024 Wuuting | Von Jonas Lindinger TGI 11/4</p>
             <p>
                 <a href="datenschutz.html">Datenschutz</a> |
