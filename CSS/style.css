@@ -244,7 +244,6 @@ li .price {
     transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
     color: var(--text);
     padding: 10px;
-    /* Todo: Text größe verbessern auf kleinerem Screen */
     font-size: 1vw;
     font-weight: bold;
     border-radius: 5px;
@@ -327,7 +326,7 @@ footer {
     text-align: center; /* Center the header */
     font-size: 2rem; /* Larger font size */
     color: var(--text); /* Use defined text color */
-    margin-top: 30px; /* Add space above */
+    margin-top: 100px; /* Add space above */
     margin-bottom: 20px; /* Space below */
 }
 
