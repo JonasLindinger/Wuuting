@@ -130,6 +130,51 @@ li {
 }
 
 /* Produkte */
+.inspection {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+    margin-top: 100px;
+
+    padding: 20px;
+
+    background-color: var(--navbar);
+    border-radius: 20px;
+}
+
+.text-next-to-inspection ul li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    padding-bottom: 20px;
+}
+
+.text-next-to-inspection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+}
+
+li .buy_btn {
+    position: absolute;
+    background-color: orange;
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+li .buy_btn:hover {
+    transform: scale(1.05);
+    color: var(--accent);
+}
+
+lit .buy_btn:active {
+    transform: scale(0.95);
+}
+
 .product-container {
     flex: 1;  /* Muss da sein keine ahnung */
     display: grid;
