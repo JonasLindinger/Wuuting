@@ -1,114 +1,119 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wuuting-Tastaturen</title>
-        <!-- Externe CSS für Symbole -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-              integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-              crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="../CSS/style.css">
-    </head>
-    <body>
-    <!-- Navigationsleiste -->
-    <header>
-        <nav class="navbar">
-            <!-- Logo immer zu sehen-->
-            <div class="logo"><a href="start.html">Wuuting</a></div>
-            <!-- Normales menu (standardmäßig zusehen, außer wenn der screen zu klein ist.) -->
-            <ul class="links">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Wuuting-Tastaturen</title>
+    <!-- Externe CSS für Symbole -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="../CSS/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigationsleiste -->
+<header>
+    <nav class="navbar">
+        <!-- Logo immer zu sehen-->
+        <div class="logo"><a href="start.html">Wuuting</a></div>
+        <!-- Normales menu (standardmäßig zusehen, außer wenn der screen zu klein ist.) -->
+        <ul class="links">
+            <li><a href="keyboards.html">Tastaturen</a></li>
+            <li><a href="keycaps.html">Tasten</a></li>
+            <li><a href="switches.html">Switches</a></li>
+            <li><a href="accessoires.html">Zubehör</a></li>
+        </ul>
+        <a class="action_btn" href="#">Konfigurator</a>
+        <!-- Suche -->
+        <div class="searchbar_container">
+            <div class="searchbar">
+                <input placeholder="Suche..." type="text">
+                <a href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+                </input>
+            </div>
+        </div>
+
+        <!-- Mobile menu button und menu alternative(dropdown) (nicht immer zu sehen dank CSS) -->
+        <div class="toggle_btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown_menu">
+            <ul>
                 <li><a href="keyboards.html">Tastaturen</a></li>
                 <li><a href="keycaps.html">Tasten</a></li>
                 <li><a href="switches.html">Switches</a></li>
                 <li><a href="accessoires.html">Zubehör</a></li>
+                <li><a class="action_btn" href="#">Konfigurator</a></li>
             </ul>
-            <a href="#" class="action_btn">Konfigurator</a>
-            <!-- Suche -->
-            <div class="searchbar_container">
-                <div class="searchbar">
-                    <input type="text" placeholder="Suche...">
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    </input>
-                </div>
-            </div>
-        
-            <!-- Mobile menu button und menu alternative(dropdown) (nicht immer zu sehen dank CSS) -->
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="dropdown_menu">
-                <ul>
-                    <li><a href="keyboards.html">Tastaturen</a></li>
-                    <li><a href="keycaps.html">Tasten</a></li>
-                    <li><a href="switches.html">Switches</a></li>
-                    <li><a href="accessoires.html">Zubehör</a></li>
-                    <li><a href="#" class="action_btn">Konfigurator</a></li>
-                </ul>
-            </div>
-        </nav>
-        </header>
-        <!-- Website -->
-        <div class="inspection">
-            <!-- Todo: Alle klassen umbenennen, dass sie gleich heißen also statt - _ oder anderstrum -->
-            <!-- Bild mit text neben dran. -->
-            <div class="text-next-to-inspection">
-                <!-- Bild -->
-                <div class="inspection-image">
-                    <img src="../Bilder/Accessoires/Wooting-wrist-rest-80.png" width="100%">
-                </div>
-                <ul>
-                    <!-- 1. Reihe (Name) -->
-                    <li><p class="name">Wuuting Handballenablage 80</p></li>
-                    <!-- Todo: 2. Reihe Daten -->
-                    <!-- 3. Reihe (Preis + Kontakt button) -->
-                    <li class="info_text">
-                        Wussten Sie, dass Sie beim Tippen Ihre Hände schweben lassen müssen? Nein, das liegt daran, dass Sie oft WASD, ASDF oder ESDF verwenden und eine „gamer-artige“ Tippgewohnheit haben.
-                    </li>
-                    <li class="info_text">
-                        Ihre Finger sind sofort einsatzbereit und ständig angespannt. Ihre mechanische Tastatur ist unangenehm hoch, und Ihre Handgelenke schmerzen auf dem Tisch. Sie schütteln kurz Ihre Hände und krümmen Ihre Finger.
-                    </li>
-                    <li class="info_text">
-                        Kommt Ihnen das bekannt vor? Dann ist es an der Zeit, in eine Handgelenkstütze zu investieren.
-                    </li>
-                    <li class="info_text">
-                        Die Wooting Gaming-Handgelenkstütze entlastet Ihre Fingersehnen, beugt frühzeitiger Ermüdung der Hand vor und bietet lang anhaltenden Komfort. Ihre Handgelenke werden es uns später danken.
-                    </li>
-                    <li class="price_info">
-                        <p class="price">32.99€</p>
-                        <!-- Todo: Kontakt oder Impressum verlinken -->
-                        <a href="impressum.html" class="buy_btn">Kontakt</a>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</header>
+<!-- Website -->
+<div class="inspection">
+    <!-- Todo: Alle klassen umbenennen, dass sie gleich heißen also statt - _ oder anderstrum -->
+    <!-- Bild mit text neben dran. -->
+    <div class="text-next-to-inspection">
+        <!-- Bild -->
+        <div class="inspection-image">
+            <img src="../Bilder/Accessoires/Wooting-wrist-rest-80.png" width="100%">
+        </div>
+        <ul>
+            <!-- 1. Reihe (Name) -->
+            <li><p class="name">Wuuting Handballenablage 80</p></li>
+            <!-- Todo: 2. Reihe Daten -->
+            <!-- 3. Reihe (Preis + Kontakt button) -->
+            <li class="info_text">
+                Wussten Sie, dass Sie beim Tippen Ihre Hände schweben lassen müssen? Nein, das liegt daran, dass Sie oft
+                WASD, ASDF oder ESDF verwenden und eine „gamer-artige“ Tippgewohnheit haben.
+            </li>
+            <li class="info_text">
+                Ihre Finger sind sofort einsatzbereit und ständig angespannt. Ihre mechanische Tastatur ist unangenehm
+                hoch, und Ihre Handgelenke schmerzen auf dem Tisch. Sie schütteln kurz Ihre Hände und krümmen Ihre
+                Finger.
+            </li>
+            <li class="info_text">
+                Kommt Ihnen das bekannt vor? Dann ist es an der Zeit, in eine Handgelenkstütze zu investieren.
+            </li>
+            <li class="info_text">
+                Die Wooting Gaming-Handgelenkstütze entlastet Ihre Fingersehnen, beugt frühzeitiger Ermüdung der Hand
+                vor und bietet lang anhaltenden Komfort. Ihre Handgelenke werden es uns später danken.
+            </li>
+            <li class="price_info">
+                <p class="price">32.99€</p>
+                <!-- Todo: Kontakt oder Impressum verlinken -->
+                <a class="buy_btn" href="impressum.html">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-        <!-- JavaScript -->
-        <script src="../JavaScript/script.js"></script>
-        <!-- Todo: Impressum und Dartenschutz sowie andere rechtliche dinge -->
-    <!-- Todo: Impressum und Dartenschutz sowie andere rechtliche dinge -->
-    <footer>
-        <div class="footer-content">
-            <h3>Wuuting</h3>
-            <p>Alles rund um Tastaturen</p>
-            <ul class="socials">
-                <li><a href="https://www.facebook.com/wootingkb/?locale=de_DE"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://x.com/WootingKB?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/wootingkb/?hl=de"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/wooting"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <!-- &copy; => icon -->
-            <p>&copy; 2024 Wuuting | Von Jonas Lindinger TGI 11/4</p>
-            <p>
-                <a href="datenschutz.html">Datenschutz</a> |
-                <a href="impressum.html">Impressum</a> |
-                <a href="wiederrufs-rueckgaberecht.html">Wiederrufs- und Rückgaberechte</a>
-            </p>
-        </div>
-    </footer>
-    </body>
+<!-- JavaScript -->
+<script src="../JavaScript/script.js"></script>
+<!-- Todo: Impressum und Dartenschutz sowie andere rechtliche dinge -->
+<!-- Todo: Impressum und Dartenschutz sowie andere rechtliche dinge -->
+<footer>
+    <div class="footer-content">
+        <h3>Wuuting</h3>
+        <p>Alles rund um Tastaturen</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/wootingkb/?locale=de_DE"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://x.com/WootingKB?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                    class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/wootingkb/?hl=de"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/wooting"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <!-- &copy; => icon -->
+        <p>&copy; 2024 Wuuting | Von Jonas Lindinger TGI 11/4</p>
+        <p>
+            <a href="datenschutz.html">Datenschutz</a> |
+            <a href="impressum.html">Impressum</a> |
+            <a href="wiederrufs-rueckgaberecht.html">Wiederrufs- und Rückgaberechte</a>
+        </p>
+    </div>
+</footer>
+</body>
 </html>

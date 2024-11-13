@@ -204,7 +204,7 @@ li .price {
 }
 
 .product-container {
-    flex: 1;  /* Muss da sein keine ahnung */
+    flex: 1; /* Muss da sein keine ahnung */
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     width: 60%;
@@ -283,7 +283,7 @@ li .price {
 
 /* Stile für die Social Media Links */
 .socials {
-    list-style: none;           /* Entfernt die Standard-Punkte */
+    list-style: none; /* Entfernt die Standard-Punkte */
     padding: 0;
     display: flex;
     justify-content: center;
@@ -292,13 +292,13 @@ li .price {
 }
 
 .socials li a {
-    color: #ffd000;             /* Farbe der Social-Icons */
+    color: #ffd000; /* Farbe der Social-Icons */
     font-size: 1.5rem;
     transition: color 0.3s;
 }
 
 .socials li a:hover {
-    color: #f5cc5c;             /* Farbe beim Hover über den Icons */
+    color: #f5cc5c; /* Farbe beim Hover über den Icons */
 }
 
 /* Fußzeilenboden */
@@ -321,17 +321,17 @@ footer {
 
 /* Style für Datenschutzerklärung etc. section */
 .info_header {
-    text-align: center;          /* Center the header */
-    font-size: 2rem;             /* Larger font size */
-    color: var(--text);          /* Use defined text color */
-    margin-top: 30px;            /* Add space above */
-    margin-bottom: 20px;         /* Space below */
+    text-align: center; /* Center the header */
+    font-size: 2rem; /* Larger font size */
+    color: var(--text); /* Use defined text color */
+    margin-top: 30px; /* Add space above */
+    margin-bottom: 20px; /* Space below */
 }
 
 .info_text {
-    max-width: 1345px;            /* Limit the width of the text */
-    margin: 0;              /* Center the text container */
-    font-size: 1.1rem;           /* Slightly larger font size */
+    max-width: 1345px; /* Limit the width of the text */
+    margin: 0; /* Center the text container */
+    font-size: 1.1rem; /* Slightly larger font size */
     line-height: 1.6;
     color: var(--text);
     padding: 10px 20px;
@@ -392,6 +392,7 @@ footer {
     .navbar .links, .navbar > .action_btn {
         display: none;
     }
+
     .navbar .toggle_btn {
         display: block;
     }
