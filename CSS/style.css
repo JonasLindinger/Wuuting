@@ -150,29 +150,57 @@ li {
 }
 
 .text-next-to-inspection {
+    justify-content: flex-start;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
 }
 
+.text-next-to-inspection ul li p {
+    color: var(--text);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.text-next-to-inspection ul li {
+    align-items: center;
+}
+
+.price_info {
+    display: flow;
+    justify-content: center;
+}
+
 li .buy_btn {
-    position: absolute;
+    max-width: 85px;
     background-color: orange;
     color: var(--text);
     padding: 0.5rem 1rem;
-    border: none;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: bold;
     transition: transform 0.2s ease;
+    height: 35px;
+    margin-left: 100%;
+    transform: translateX(-100%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
 }
 
 li .buy_btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateX(-100%);
     color: var(--accent);
 }
 
-lit .buy_btn:active {
-    transform: scale(0.95);
+li .buy_btn:active {
+    transform: scale(0.95) translateX(-100%);
+}
+
+li .price {
+    color: var(--text);
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .product-container {
@@ -226,7 +254,6 @@ lit .buy_btn:active {
     background-color: orange;
     color: var(--text);
     padding: 0.5rem 1rem;
-    border: none;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: bold;
@@ -302,14 +329,13 @@ footer {
 }
 
 .info_text {
-    max-width: 800px;            /* Limit the width of the text */
-    margin: 0 auto;              /* Center the text container */
+    max-width: 1345px;            /* Limit the width of the text */
+    margin: 0;              /* Center the text container */
     font-size: 1.1rem;           /* Slightly larger font size */
-    line-height: 1.6;            /* Improve readability */
-    color: var(--text);          /* Use defined text color */
-    padding: 10px 20px;          /* Add padding around the text */
-    background-color: var(--background);  /* Use background color */
-    border-radius: 10px;         /* Rounded corners for modern look */
+    line-height: 1.6;
+    color: var(--text);
+    padding: 10px 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
@@ -356,8 +382,14 @@ footer {
     width: 96%;
 }
 
+@media (max-width: 1345px) {
+    .text-next-to-inspection {
+        grid-template-columns: repeat(1, 1fr); /* 1 columns */
+    }
+}
+
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 950px) {
     .navbar .links, .navbar > .action_btn {
         display: none;
     }
