@@ -245,7 +245,7 @@ li .price {
     color: var(--text);
     padding: 10px;
     /* Todo: Text größe verbessern auf kleinerem Screen */
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: bold;
     border-radius: 5px;
 }
@@ -425,11 +425,19 @@ footer {
     .searchbar input {
         width: 96%;
     }
+
+    .product .name {
+        font-size: 2vw;
+    }
 }
 
 @media (max-width: 576px) {
     .dropdown_menu {
         left: 2rem;
         width: unset;
+    }
+
+    .product .name {
+        font-size: 3vw;
     }
 }
