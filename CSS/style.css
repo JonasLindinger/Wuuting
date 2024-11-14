@@ -383,6 +383,96 @@ footer {
     width: 96%;
 }
 
+/* Grundstil für den Kontaktbereich */
+.contact_section {
+    max-width: 80%;
+    padding: 20px;
+    background-color: var(--navbar);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Überschrift */
+.the_contact_header {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Beschreibungstext */
+.the_contact_description {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Kontaktinformationen */
+.the_contact_info {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Formularfelder */
+.the_form_field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #323432;
+    background-color: #ffffff;
+}
+
+.the_message_field {
+    height: 100px;
+}
+
+
+/* Formularbeschriftungen */
+.the_form_label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.the_submit_button {
+    max-width: 150px;
+    text-align: center;
+    padding: 12px;
+    background-color: #ffd000;
+    color: #323432;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.the_submit_button:hover {
+    background-color: #f5cc5c;
+    transform: scale(1.05);
+}
+
+.the_submit_button:active {
+    transform: scale(0.95);
+}
+
+.map_container {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.map_container iframe {
+    padding: 20px;
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
 @media (max-width: 1345px) {
     .text_next_to_inspection {
         grid-template-columns: repeat(1, 1fr); /* 1 columns */
@@ -427,6 +517,13 @@ footer {
 
     .product .name {
         font-size: 1.6vw;
+    }
+
+    .map_container iframe {
+        padding: 20px;
+        width: 100%;
+        height: 100px;
+        border: 0;
     }
 }
 
