@@ -319,6 +319,13 @@ footer {
 }
 
 /* Style für Datenschutzerklärung etc. section */
+.info_section {
+    height: 400px;
+    margin: 100px 10%;
+    border-radius: 20px;
+    background-color: var(--primary);
+}
+
 .info_header {
     text-align: center; /* Center the header */
     font-size: 2rem; /* Larger font size */
