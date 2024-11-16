@@ -151,7 +151,9 @@ li {
 
     position: absolute;
 
-    background: linear-gradient(to right, #273469, #30343F);
+    /* Gradient Background */
+    background: rgb(76,92,104);
+    background: linear-gradient(90deg, rgba(76,92,104,1) 42%, rgba(220,220,221,1) 100%);
     color: var(--text);
 
     align-content: center;
