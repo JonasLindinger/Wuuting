@@ -1,12 +1,10 @@
 /* Farbvariablen */
 :root {
     /* Todo: Mach bessere farben */
-    --background: #f5f5fa;
-    --navbar: #D9D9D9;
-    --text: #323432;
-    --primary: #ffd000;
-    --accent: #f5cc5c;
-    --footer: #323432;
+    --background: #DCDCDD;
+    --primary: #4C5C68;
+    --text: #C5C3C6;
+    --accent: #ffd000;
 }
 
 /* Keine ahnung */
@@ -33,7 +31,7 @@ body {
 header {
     position: fixed;
     width: 100%;
-    background-color: var(--navbar);
+    background-color: var(--primary);
     z-index: 1000;
 }
 
@@ -65,8 +63,8 @@ header {
 }
 
 .action_btn {
-    background-color: orange;
-    color: var(--text);
+    background-color: var(--accent);
+    color: var(--primary);
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 20px;
@@ -76,6 +74,7 @@ header {
 }
 
 .action_btn:hover {
+    color: var(--primary);
     transform: scale(1.05);
 }
 
@@ -90,7 +89,11 @@ a {
     font-size: 1rem;
 }
 
-a:hover {
+.links li a:hover {
+    color: var(--accent);
+}
+
+.logo a:hover {
     color: var(--accent);
 }
 
@@ -105,7 +108,7 @@ li {
     right: 2rem;
     top: 60px;
     width: 300px;
-    background-color: var(--navbar);
+    background-color: var(--primary);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
@@ -135,14 +138,11 @@ li {
 /* Produkte */
 .inspection {
     width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin: 100px 10%;
 
     padding: 20px;
 
-    background-color: var(--navbar);
+    background-color: var(--primary);
     border-radius: 20px;
 }
 
@@ -177,8 +177,8 @@ li {
 
 li .buy_btn {
     max-width: 85px;
-    background-color: orange;
-    color: var(--text);
+    background-color: var(--accent);
+    color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -191,7 +191,6 @@ li .buy_btn {
 
 li .buy_btn:hover {
     transform: scale(1.05) translateX(-100%);
-    color: var(--accent);
 }
 
 li .buy_btn:active {
@@ -241,7 +240,7 @@ li .price {
     top: 6%;
     left: 50%;
     transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
-    color: var(--text);
+    color: var(--primary);
     padding: 10px;
     font-size: 0.8vw;
     font-weight: bold;
@@ -252,8 +251,8 @@ li .price {
     position: absolute;
     bottom: 9%;
     right: 6%;
-    background-color: orange;
-    color: var(--text);
+    background-color: var(--accent);
+    color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -263,7 +262,6 @@ li .price {
 
 .product .buy_btn:hover {
     transform: scale(1.05);
-    color: var(--accent);
 }
 
 .product .buy_btn:active {
@@ -293,18 +291,18 @@ li .price {
 }
 
 .socials li a {
-    color: #ffd000; /* Farbe der Social-Icons */
+    color: var(--accent); /* Farbe der Social-Icons */
     font-size: 1.5rem;
     transition: color 0.3s;
 }
 
 .socials li a:hover {
-    color: #f5cc5c; /* Farbe beim Hover über den Icons */
+    color: var(--accent); /* Farbe beim Hover über den Icons */
 }
 
 /* Fußzeilenboden */
 footer {
-    background-color: var(--footer);
+    background-color: var(--primary);
     color: var(--background);
     padding: 20px 0;
     text-align: center;
@@ -351,7 +349,7 @@ footer {
     width: 2rem;
     cursor: pointer;
     padding: 5px;
-    background-color: orange;
+    background-color: var(--accent);
     border-radius: 30px;
     align-items: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -366,12 +364,12 @@ footer {
     font-weight: 500;
     transition: 0.4s;
     background-color: transparent;
-    color: var(--background);
+    color: var(--primary);
 }
 
 .searchbar a .fas {
     font-size: 1rem;
-    color: var(--background);
+    color: var(--primary);
 }
 
 .searchbar:hover {
@@ -386,13 +384,10 @@ footer {
 .contact_section {
     max-width: 80%;
     padding: 20px;
-    background-color: var(--navbar);
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: 10%;
-    margin-right: 10%;
+    background-color: var(--primary);
+    color: var(--text);
+    margin: 100px 10%;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Überschrift */
@@ -420,11 +415,9 @@ footer {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
-    color: #323432;
-    background-color: #ffffff;
+    background-color: var(--background);
 }
 
 .the_message_field {
@@ -443,15 +436,14 @@ footer {
     max-width: 150px;
     text-align: center;
     padding: 12px;
-    background-color: #ffd000;
-    color: #323432;
+    background-color: var(--accent);
+    color: var(--primary);
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .the_submit_button:hover {
-    background-color: #f5cc5c;
     transform: scale(1.05);
 }
 
