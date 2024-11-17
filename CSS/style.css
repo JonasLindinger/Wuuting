@@ -432,6 +432,10 @@ footer {
 }
 
 /* Style für Datenschutzerklärung etc. section */
+.datenschutz {
+    margin-bottom: 200px;
+}
+
 .info_section {
     display: block;
     height: 100%;
