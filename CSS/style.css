@@ -191,7 +191,7 @@ li {
 /* Popular Products Bereich */
 .popular_products {
     /* Oben rechts unten links*/
-    margin: 300px auto 120px auto;
+    margin: 300px auto 0 auto;
     width: 90%;
 }
 
@@ -248,6 +248,39 @@ li {
     left: 50%;
     transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
     color: var(--text);
+}
+
+/* Tutorials */
+.starting_tutorials {
+    background-color: var(--primary);
+    margin: 3% auto;
+    width: 90%;
+    border-radius: 20px;
+}
+
+.starting_tutorials h1 {
+    color: var(--text);
+    padding: 15px 0 0 20px;
+}
+
+.starting_tutorials ul {
+    padding: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+}
+
+.starting_tutorials ul li iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Skaliert das Video auf eine Auflösung von 16:9 (Standart Youtube Video) */
+    border-radius: 10px;
+}
+
+.starting_tutorials ul li p {
+    color: var(--text);
+    font-size: 1.2vw;
 }
 
 /* Produkte */
@@ -606,6 +639,10 @@ footer {
 @media (max-width: 1345px) {
     /* Product Inspection */
     .text_next_to_inspection {
+        grid-template-columns: repeat(1, 1fr); /* 1 columns */
+    }
+
+    .starting_tutorials ul {
         grid-template-columns: repeat(1, 1fr); /* 1 columns */
     }
 }
