@@ -675,8 +675,6 @@ footer {
 
     /* Searchbar */
     .searchbar_container {
-        width: 200px;
-        display: flex;
         margin-left: 0;
     }
 

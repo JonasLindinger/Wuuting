@@ -25,7 +25,8 @@ window.addEventListener("resize", function () {
 // Das hier läuft nachdem HTML fertig geladen hat.
 document.addEventListener("DOMContentLoaded", () => {
     // Suchleiste
-    const searchbar = document.querySelector(".searchbar input");
+    const searchbar = document.querySelector(".searchbar");
+    const searchbarInput = document.querySelector(".searchbar input");
 
     const productElements = document.querySelectorAll(".product");
     let pageProducts = {};
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Event listener, für den Fall das die Searchbar benutzt wird.
-    searchbar.addEventListener("input", function (event) {
+    searchbarInput.addEventListener("input", function (event) {
         const productNames = Object.keys(products);
 
         for (var i = 0; i < productNames.length; i++) {
@@ -53,17 +54,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let shouldBeVisible = true;
 
-            if (searchbar.value == "") {
-                if (pageProducts[name] == undefined) {
-                    shouldBeVisible = false;
-                }
-                else {
-                    shouldBeVisible = true;
-                }
+            if (searchbarInput.value == "") {
+                shouldBeVisible = pageProducts[name] != undefined;
+
+                // Wenn die Searchbar nicht mehr in benutzung ist, klappt sie ein.
+                searchbar.style = "";
+                searchbarInput.style = "";
             }
             else {
                 // Trim entfernt am anfang und ende die Leerstellen, was gut für die Suche ist.
-                shouldBeVisible = name.toLowerCase().trim().includes(searchbar.value.toLowerCase().trim());
+                shouldBeVisible = name.toLowerCase().trim().includes(searchbarInput.value.toLowerCase().trim());
+
+                // Wenn die Searchbar in benutzung ist, bleibt sie geöffnet.
+                searchbar.style = "width: 100%";
+                searchbarInput.style = "width: 96%";
             }
 
             if (shouldBeVisible) {
