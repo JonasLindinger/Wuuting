@@ -28,24 +28,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchbar = document.querySelector(".searchbar input");
 
     const productElements = document.querySelectorAll(".product");
-    let products = {};
+    let pageProducts = {};
+    let products = {}
 
     if (productElements.length > 0) {
         for (var i = 0; i < productElements.length; i++) {
             const productElement = productElements[i];
             const productName = productElement.getElementsByClassName("name").item(0).textContent;
             products[productName] = productElement;
+
+            if (productElement.classList.contains("siteProduct")) {
+                pageProducts[productName] = productElement;
+            }
         }
     }
 
     // Event listener, für den Fall das die Searchbar benutzt wird.
     searchbar.addEventListener("input", function (event) {
         const productNames = Object.keys(products);
+
         for (var i = 0; i < productNames.length; i++) {
             var name = productNames[i];
             var product = products[name];
 
-            let shouldBeVisible = name.toLowerCase().includes(searchbar.value.toLowerCase());
+            let shouldBeVisible = true;
+
+            if (searchbar.value == "") {
+                if (pageProducts[name] == undefined) {
+                    shouldBeVisible = false;
+                }
+                else {
+                    shouldBeVisible = true;
+                }
+            }
+            else {
+                // Trim entfernt am anfang und ende die Leerstellen, was gut für die Suche ist.
+                shouldBeVisible = name.toLowerCase().trim().includes(searchbar.value.toLowerCase().trim());
+            }
 
             if (shouldBeVisible) {
                 product.style="";

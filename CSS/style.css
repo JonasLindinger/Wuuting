@@ -22,6 +22,11 @@ html, body {
     font-family: "Open Sans", sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 body {
     background-color: var(--background);
 }
@@ -79,10 +84,6 @@ header {
 
 .action_btn:active {
     transform: scale(0.95);
-}
-
-a {
-    text-decoration: none;
 }
 
 /* Links ohne Unterstreichung */
