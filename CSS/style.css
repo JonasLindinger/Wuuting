@@ -1,4 +1,4 @@
-/* Farbvariablen */
+/* Farben */
 :root {
     --background: #DCDCDD;
     --primary: #4C5C68;
@@ -6,15 +6,17 @@
     --accent: #ffd000;
 }
 
-/* Keine ahnung */
+/* Generelle Einstellungen */
 html, body {
     height: 100%;
-    margin: 0;
     display: flex;
     flex-direction: column;
+
+    /* Hintergrund */
+    background-color: var(--background);
 }
 
-/* Grundstil (keine ahnung warum man das mit margin, padding und box-sizing machen muss.) */
+/* Grundstil für jedes Element */
 * {
     margin: 0;
     padding: 0;
@@ -22,44 +24,73 @@ html, body {
     font-family: "Open Sans", sans-serif;
 }
 
+/* Jeder Link soll standardmäßig kein Unterstich haben und die richtige Farbe haben */
 a {
     text-decoration: none;
     color: var(--text);
 }
 
-body {
-    background-color: var(--background);
+/* Jeder Listenelement soll keinen Punkt haben. */
+li {
+    list-style-type: none;
 }
 
-/* Navbar Hintergrundfarbe */
+/* Navbar */
+/* Navbar normalzustand */
 header {
+    /* Navbar soll immer da sein. Und niemals verdeckt werden. */
     position: fixed;
-    width: 100%;
-    background-color: var(--primary);
     z-index: 1000;
+
+    background-color: var(--primary);
+    width: 100%;
 }
 
 .navbar {
+    /* Layout */
+    max-width: 1200px;
+
     width: 100%;
     height: 60px;
-    max-width: 1200px;
+
     margin: 0 auto;
+
+    /* Layout */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .navbar .logo a {
+    /* Logo (Unternehmen Name in Fett) */
     font-size: 1.5rem;
     font-weight: bold;
 }
 
+.navbar .logo a:hover {
+    /* Wenn das Logo gehovert wird, verändert es die Farbe */
+    color: var(--accent);
+}
+
 .navbar .links {
+    /* Navbar links sollen einen abstand zwischen drinnen haben*/
     display: flex;
     gap: 2rem;
 }
 
+.navbar .links li a {
+    /* Links stylen (Farbe und größe)*/
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.navbar .links li a:hover {
+    /* Wenn die links gehovert werden, dann verändern sie die Farbe. */
+    color: var(--accent);
+}
+
 .navbar .toggle_btn {
+    /* Soll standardmäßig versteckt sein. */
     color: var(--text);
     font-size: 1.5rem;
     cursor: pointer;
@@ -67,77 +98,61 @@ header {
 }
 
 .action_btn {
+    /* Auffälliger button */
     background-color: var(--accent);
     color: var(--primary);
-    padding: 0.5rem 1rem;
     border: none;
     border-radius: 20px;
+
+    padding: 0.5rem 1rem;
     font-size: 0.8rem;
     font-weight: bold;
+
+    /* Animation für das hovern und drücken. */
     transition: transform 0.2s ease;
 }
 
 .action_btn:hover {
-    color: var(--primary);
+    /* Wenn gehovert wird, wird der Button größer. */
     transform: scale(1.05);
 }
 
 .action_btn:active {
+    /* Wenn der Button aktiviert(gedrückt) wird, wird der Button größer. */
     transform: scale(0.95);
 }
 
-/* Links ohne Unterstreichung */
-.links li a {
-    color: var(--text);
-    font-size: 1rem;
-}
-
-.logo a {
-    color: var(--text);
-    font-size: 1rem;
-}
-
-.links li a:hover {
-    color: var(--accent);
-}
-
-.logo a:hover {
-    color: var(--accent);
-}
-
-/* Listenelemente ohne Punkte */
-li {
-    list-style-type: none;
-}
-
-/* Dropdown-Menü */
+/* Dropdown Navbar */
 .dropdown_menu {
+    /* Immer da, oben und sichtbar */
     position: absolute;
+    z-index: 1000;
+
+    /* Layout */
     right: 2rem;
     top: 60px;
     width: 300px;
+
+    /* Aussehen */
     background-color: var(--primary);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    opacity: 0;
+    border-radius: 20px;
+
+    /* Element ist standardmäßig unsichtbar (es hat eine höhe(Y) von 0)*/
     transform: scaleY(0);
+    /* Legt den ursprung (Pivot/Origin) nach oben. So das die Animation von oben nach unten passiert. */
     transform-origin: top;
-    transition: opacity 0.1s ease, transform 0.1s ease;
-    z-index: 1000; /* z-index , damit es immer über allem steh und nie verdeckt wird */
+
+    /* Animation fürs öffnen und schließen. */
+    transition: transform 0.1s ease;
 }
 
 .dropdown_menu.open {
-    opacity: 1;
+    /* Wenn das Dropdown zusätzlich die Klasse "open" hat, öffnen wir das dropdown, indem wir die höhe auf 1(100%) stellen. */
     transform: scaleY(1);
 }
 
-.dropdown_menu ul {
-    padding: 0;
-    margin: 0;
-}
-
 .dropdown_menu li {
+    /* List item Grundstil */
     padding: 0.7rem;
     display: flex;
     justify-content: center;
@@ -145,6 +160,8 @@ li {
 
 /* Start Seite */
 .banner {
+    /* Layout */
+    align-content: center;
     margin-top: 60px;
 
     width: 100%;
@@ -156,15 +173,15 @@ li {
     background: rgb(76,92,104);
     background: linear-gradient(90deg, rgba(76,92,104,1) 42%, rgba(220,220,221,1) 100%);
     color: var(--text);
-
-    align-content: center;
 }
 
-.start_content {
+.banner_content {
+    /* Layout */
     margin-left: 20px;
 }
 
 .banner_btn {
+    /* Layout */
     display: flex;
     justify-content: center;
 
@@ -173,464 +190,616 @@ li {
     padding: 0.5rem 1rem;
     margin-top: 10px;
 
-    background-color: var(--accent);
     color: var(--primary);
-
+    background-color: var(--accent);
     border-radius: 6px;
 
+    /* Animation fürs hovern und aktivieren(drücken). */
     transition: transform 0.2s ease;
 }
 
 .banner_btn:hover {
+    /* Wenn gehovert wird, wird der Button größer. */
     transform: scale(1.05);
 }
 
 .banner_btn:active {
+    /* Wenn gedrückt wird, wird der Button kleiner. */
     transform: scale(0.95);
 }
 
-/* Popular Products Bereich */
+/* Beliebte Produkte */
 .popular_products {
-    /* Oben rechts unten links*/
+    /* Zentriert mit abstand außenrum. */
     margin: 300px auto 0 auto;
     width: 90%;
 }
 
 .popular_products_header {
+    /* Zentrierter Text mit abstand nach unten. */
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .popular_product_container {
+    /* 3 Spalten von Produkten. */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+
+    /* Abstand */
     gap: 40px;
+
+    /* Layout */
     justify-items: center;
 }
 
 .popular_product {
+    /* Grundstil */
     background-color: var(--primary);
     border-radius: 20px;
+
+    /* Layout */
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     position: relative;
+
     width: 100%;
     height: min-content;
 }
 
 .popular_product img {
+    /* Layout */
     max-width: 100%;
-    border-radius: 15px;
 }
 
 .popular_product h1 {
+    /* Grundstil */
     font-size: 0.9vw;
+
+    /* Layout */
     position: absolute;
     bottom: 20%;
+
+    /* Zentrieren */
     left: 50%;
-    transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
-    color: var(--text);
+    transform: translateX(-50%);
 }
 
 .popular_product h1 a {
+    /* Grundstil */
     color: var(--accent);
 }
 
 .popular_product h1 a:hover {
+    /* Wenn gehovert wird, unterstreichen wir den link. */
     text-decoration: underline;
 }
 
 .popular_product p {
+    /* Grundstil */
+    color: var(--text);
+
+    /* Layout */
     width: 80%;
     position: absolute;
     bottom: 6%;
+
+    /* Zentrieren */
     left: 50%;
-    transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
-    color: var(--text);
+    transform: translateX(-50%);
 }
 
 /* Tutorials */
 .starting_tutorials {
+    /* Grundstil */
     background-color: var(--primary);
+    border-radius: 20px;
+
+    /* Layout */
     margin: 3% auto;
     width: 90%;
-    border-radius: 20px;
 }
 
 .starting_tutorials h1 {
+    /* Grundstil */
     color: var(--text);
+
+    /* Layout */
     padding: 15px 0 0 20px;
 }
 
 .starting_tutorials ul {
+    /* Layout */
     padding: 20px;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+
     gap: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
 }
 
 .starting_tutorials ul li iframe {
+    /*Layout*/
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9; /* Skaliert das Video auf eine Auflösung von 16:9 (Standart Youtube Video) */
+
+    /* Skaliert das Video auf eine Auflösung von 16:9 (Standart Youtube Video) */
+    aspect-ratio: 16 / 9;
+
+    /* Grundstil */
     border-radius: 10px;
 }
 
 .starting_tutorials ul li p {
+    /* Grundstil */
     color: var(--text);
     font-size: 1.2vw;
 }
 
 /* Produkte */
-.inspection {
-    width: 80%;
-    margin: 100px 10%;
-
-    padding: 20px;
-
-    background-color: var(--primary);
-    border-radius: 20px;
-}
-
-.text_next_to_inspection ul li {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    padding-bottom: 20px;
-}
-
-.text_next_to_inspection {
-    justify-content: flex-start;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-}
-
-.text_next_to_inspection ul li p {
-    color: var(--text);
-    padding: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.text_next_to_inspection ul li {
-    align-items: center;
-}
-
-.price_info {
-    display: flow;
-    justify-content: center;
-}
-
-li .buy_btn {
-    max-width: 85px;
-    background-color: var(--accent);
-    color: var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-    height: 35px;
-    margin-left: 100%;
-    transform: translateX(-100%);
-}
-
-li .buy_btn:hover {
-    transform: scale(1.05) translateX(-100%);
-}
-
-li .buy_btn:active {
-    transform: scale(0.95) translateX(-100%);
-}
-
-li .price {
-    color: var(--text);
-    padding: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
 .product_container {
+    /* Layout */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+
     width: 60%;
     margin: 100px auto;
+
     gap: 40px;
 }
 
 .product {
+    /* Layout */
     position: relative;
+
     width: 100%;
     height: min-content;
 }
 
 .product img {
+    /* Layout */
     width: 100%;
     height: auto;
 }
 
 .product .price {
+    /* Layout */
     position: absolute;
+
     bottom: 6%;
     left: 6%;
-    color: var(--text);
+
     padding: 10px;
+
+    /* Grundstil */
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--text);
 }
 
 .product .name {
+    /* Layout */
     position: absolute;
+
     top: 6%;
+
+    /* Zentrieren */
     left: 50%;
-    transform: translateX(-50%); /* Mach, das der Text wirklich zentriert ist und nicht erst bei der mitte anfängt. */
-    color: var(--primary);
+    transform: translateX(-50%);
+
     padding: 10px;
+
+    /* Grundstil */
+    color: var(--primary);
     font-size: 0.8vw;
     font-weight: bold;
 }
 
 .product .buy_btn {
+    /* Layout */
     position: absolute;
+
     bottom: 9%;
     right: 6%;
+
+    padding: 0.5rem 1rem;
+
+    /* Grundstil */
+    border-radius: 20px;
     background-color: var(--accent);
     color: var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+
     font-size: 0.8rem;
     font-weight: bold;
+
+    /* Animation für den fall, dass man den Button hovert oder aktiviert(drückt) */
     transition: transform 0.2s ease;
 }
 
 .product .buy_btn:hover {
+    /* Wenn der Button gehoveret wird, wird er größer */
     transform: scale(1.05);
 }
 
 .product .buy_btn:active {
+    /* Wenn der Button aktiviert(gedrückt) wird, wird er kleiner */
     transform: scale(0.95);
 }
 
+/* Produkt info */
+.inspection {
+    /* Layout */
+    width: 80%;
+    margin: 100px 10%;
+
+    padding: 20px;
+
+    /* Grundstil */
+    background-color: var(--primary);
+    border-radius: 20px;
+}
+
+.text_next_to_inspection ul li {
+    /* Layout  */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+
+    padding-bottom: 20px;
+}
+
+.text_next_to_inspection {
+    /* Layout */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten */
+
+    justify-content: flex-start;
+}
+
+.text_next_to_inspection ul li p {
+    /* Grundstil */
+    color: var(--text);
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    /* Layout */
+    padding: 10px;
+}
+
+.text_next_to_inspection ul li {
+    /* Layout */
+    align-items: center;
+}
+
+.price_info {
+    /* Layout */
+    display: flow;
+    justify-content: center;
+}
+
+li .buy_btn {
+    /* Layout */
+    max-width: 85px;
+    height: 35px;
+
+    padding: 0.5rem 1rem;
+    margin-left: 100%;
+
+    background-color: var(--accent);
+    color: var(--primary);
+
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    transform: translateX(-100%);
+
+    /* Animation für den fall, das der button größer oder kleiner wird (gehovert oder aktiviert(gedrückt)) wird */
+    transition: transform 0.2s ease;
+}
+
+li .buy_btn:hover {
+    /* Wenn der Button gehovert wird, wird er größer. */
+    transform: scale(1.05) translateX(-100%);
+}
+
+li .buy_btn:active {
+    /* Wenn der Button aktiviert(gedrückt) wird, wird er kleiner. */
+    transform: scale(0.95) translateX(-100%);
+}
+
+li .price {
+    /* Grundstil */
+    color: var(--text);
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+
+    /* Layout */
+    padding: 10px;
+}
+
+/* Footer */
 .footer_content h3 {
+    /* Logo Grundstil */
     margin-bottom: 10px;
     font-size: 1.8rem;
 }
 
 .footer_content p {
+    /* Grundstil */
     font-size: 1rem;
     max-width: 600px;
-    margin: 0 auto;
+
+    /* Layout */
     line-height: 1.6;
-}
-
-/* Stile für die Social Media Links */
-.socials {
-    list-style: none; /* Entfernt die Standard-Punkte */
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.socials li a {
-    color: var(--accent); /* Farbe der Social-Icons */
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.socials li a:hover {
-    color: var(--accent); /* Farbe beim Hover über den Icons */
+    margin: 0 auto;
 }
 
 /* Fußzeilenboden */
 footer {
+    /* Grundstil */
     background-color: var(--primary);
     color: var(--background);
+
+    /* Layout */
     padding: 20px 0;
     text-align: center;
 }
 
+/* Stile für die Social Media Links */
+.socials {
+    /* Grundstil */
+    padding: 0;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.socials li a {
+    /* Grundstil */
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+/* Webseiten Links wir Impressum... */
 .footer_bottom a {
+    /* Grundstil */
     color: var(--background);
-    text-decoration: none;
-    transition: color 0.3s;
 }
 
 .footer_bottom a:hover {
-    color: var(--accent); /* Yellow hover color */
+    /* Grundstil */
+    color: var(--accent);
 }
 
 /* Style für Datenschutzerklärung etc. section */
 .datenschutz {
+    /* Layout */
     margin-bottom: 200px;
 }
 
 .info_section {
+    /* Layout */
     display: block;
     height: 100%;
+
     min-height: 400px;
     margin: 100px 10%;
+
+    /* Grundstil */
     border-radius: 20px;
     background-color: var(--primary);
 }
 
 .info_header {
-    text-align: center; /* Center the header */
-    font-size: 2rem; /* Larger font size */
-    color: var(--text); /* Use defined text color */
-    margin-top: 100px; /* Add space above */
-    margin-bottom: 20px; /* Space below */
+    /* Layout */
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+    /* Grundstil */
+    font-size: 2rem;
+    color: var(--text);
 }
 
 .info_text {
-    max-width: 1345px; /* Limit the width of the text */
-    margin: 0; /* Center the text container */
-    font-size: 1.1rem; /* Slightly larger font size */
-    line-height: 1.6;
-    color: var(--text);
+    /* Layout */
+    margin: 0;
     padding: 10px 20px;
+
+    /* Grundstil */
+    color: var(--text);
     border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* Suchleiste */
 .searchbar_container {
+    /* Layout */
     width: 200px;
     display: flex;
     margin-left: -100px;
 }
 
 .searchbar {
+    /* Layout */
     height: 2rem;
     width: 2rem;
-    cursor: pointer;
+
     padding: 5px;
+
+    /* Grundstil */
+    cursor: pointer;
     background-color: var(--accent);
     border-radius: 30px;
     align-items: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    /* Animation für das vekleineren und vergrößen */
     transition: 0.4s;
 }
 
 .searchbar input {
+    /* Layout */
     max-width: 85%;
     width: 0;
+
+    /* Grundstil */
     outline: none;
     border: none;
+
     font-weight: 500;
     transition: 0.4s;
+
     background-color: transparent;
     color: var(--primary);
 }
 
 .searchbar a .fas {
+    /* Grundstil */
     font-size: 1rem;
     color: var(--primary);
 }
 
 .searchbar:hover {
+    /* Layout */
     width: 100%;
 }
 
 .searchbar:hover input {
+    /* Layout */
     width: 96%;
 }
 
 /* Grundstil für den Kontaktbereich */
 .contact_section {
+    /* Layout */
     max-width: 80%;
+
     padding: 20px;
+    margin: 100px 10%;
+
+    /* Grundstil */
     background-color: var(--primary);
     color: var(--text);
-    margin: 100px 10%;
     border-radius: 20px;
 }
 
-/* Überschrift */
 .the_contact_header {
+    /* Layout */
+    margin-bottom: 10px;
+
+    /* Grundstil */
     text-align: center;
     font-size: 1.8rem;
-    margin-bottom: 10px;
 }
 
-/* Beschreibungstext */
 .the_contact_description {
+    /* Layout */
+    margin-bottom: 20px;
+
+    /* Grundstil */
     text-align: center;
     font-size: 1rem;
-    margin-bottom: 20px;
 }
 
-/* Kontaktinformationen */
 .the_contact_info {
-    font-size: 1rem;
+    /* Layout */
     margin-bottom: 30px;
+
+    /* Grundstil */
+    font-size: 1rem;
 }
 
-/* Formularfelder */
 .the_form_field {
+    /* Layout */
     width: 100%;
     padding: 10px;
+
     margin-bottom: 15px;
+
+    /* Grundstil */
     border-radius: 5px;
     font-size: 1rem;
     background-color: var(--background);
 }
 
 .the_message_field {
+    /* Grundstil */
     height: 100px;
 }
 
-
-/* Formularbeschriftungen */
 .the_form_label {
+    /* Layout */
     display: block;
     margin-top: 10px;
+
+    /* Grundstil */
     font-weight: bold;
 }
 
 .the_submit_button {
+    /* Layout */
     max-width: 150px;
-    text-align: center;
     padding: 12px;
+
+    /* Grundstil */
+    text-align: center;
     background-color: var(--accent);
     color: var(--primary);
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+
+    /* Animation fürs hovern und aktivieren(drücken) */
+    transition: transform 0.3s ease;
 }
 
 .the_submit_button:hover {
+    /* Wenn der Button gehovert wird, wird der Button größer. */
     transform: scale(1.05);
 }
 
 .the_submit_button:active {
+    /* Wenn der Button aktiviert(gedrückt) wird, wird der Button kleiner. */
     transform: scale(0.95);
 }
 
 .map_container {
+    /* Layout */
     max-width: 100%;
     height: auto;
-    overflow: hidden;
 }
 
 .map_container iframe {
+    /* Layout */
     padding: 20px;
     width: 100%;
+
+    min-height: 300px;
     height: 200px;
-    border-radius: 20px;
 }
 
+/* Responsive Dinge */
 @media (max-width: 1650px) {
     /* Start Seite */
     .popular_product p {
+        /* Neuer Stil */
         display: none;
     }
 
     .popular_product h1 {
+        /* Neuer Stil */
         font-size: 1.8vw;
         position: absolute;
         bottom: 10%;
@@ -640,15 +809,18 @@ footer {
 @media (max-width: 1345px) {
     /* Product Inspection */
     .text_next_to_inspection {
+        /* Neuer Stil */
         grid-template-columns: repeat(1, 1fr); /* 1 columns */
     }
 
     /* Tutorials */
     .starting_tutorials ul {
+        /* Neuer Stil */
         grid-template-columns: repeat(1, 1fr); /* 1 columns */
     }
 
     .starting_tutorials ul li p {
+        /* Neuer Stil */
         font-size: 2.2vw;
     }
 }
@@ -657,50 +829,61 @@ footer {
 @media (max-width: 950px) {
     /* Navbar */
     .navbar .links, .navbar > .action_btn {
+        /* Neuer Stil */
         display: none;
     }
 
     .navbar .toggle_btn {
+        /* Neuer Stil */
         display: block;
     }
 
     /* Products */
     .product_container {
+        /* Neuer Stil */
         grid-template-columns: repeat(1, 1fr); /* 1 column */
     }
 
     .product .name {
+        /* Neuer Stil */
         font-size: 1.6vw;
     }
 
     /* Searchbar */
     .searchbar_container {
+        /* Neuer Stil */
         margin-left: 0;
     }
 
     .searchbar {
+        /* Neuer Stil */
         width: 100%;
     }
 
     .searchbar input {
+        /* Neuer Stil */
         width: 96%;
     }
 
     /* Kontakt */
     .map_container iframe {
+        /* Neuer Stil */
         height: 300px;
     }
 
     /* Start Page */
     .popular_product_container {
+        /* Neuer Stil */
         grid-template-columns: repeat(1, 1fr); /* 3 columns */
     }
     /* Start Seite */
     .popular_product p {
+        /* Neuer Stil */
         display: revert;
     }
 
     .popular_product h1 {
+        /* Neuer Stil */
         font-size: 2.8vw;
         position: absolute;
         bottom: 20%;
@@ -710,11 +893,12 @@ footer {
 @media (max-width: 750px) {
     /* Starting Page */
     .banner {
+        /* Neuer Stil */
         display: none;
     }
 
     .popular_products {
-        /* Oben rechts unten links*/
+        /* Neuer Stil */
         margin: 100px auto 50px auto;
         width: 90%;
     }
@@ -723,16 +907,19 @@ footer {
 @media (max-width: 576px) {
     /* Navbar */
     .dropdown_menu {
+        /* Neuer Stil */
         left: 2rem;
         width: unset;
     }
 
     /* Start Seite */
     .popular_product p {
+        /* Neuer Stil */
         display: none;
     }
 
     .popular_product h1 {
+        /* Neuer Stil */
         font-size: 5.8vw;
         position: absolute;
         bottom: 10%;

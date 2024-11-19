@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchbarInput.style = "width: 96%";
             }
 
+            // Element anzeigen oder nicht.
             if (shouldBeVisible) {
                 product.style="";
             }
