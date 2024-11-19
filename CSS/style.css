@@ -369,8 +369,8 @@ header {
     /* Layout */
     position: absolute;
 
-    bottom: 6%;
-    left: 6%;
+    bottom: 7%;
+    left: 1%;
 
     padding: 10px;
 
@@ -384,7 +384,7 @@ header {
     /* Layout */
     position: absolute;
 
-    top: 6%;
+    top: 1%;
 
     /* Zentrieren */
     left: 50%;
@@ -403,7 +403,7 @@ header {
     position: absolute;
 
     bottom: 9%;
-    right: 6%;
+    right: 2%;
 
     padding: 0.5rem 1rem;
 
