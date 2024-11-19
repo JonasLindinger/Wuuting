@@ -7,3 +7,6 @@ It has a Searchbar.
 It has an Impressum.
 It has a Datenschutzerklärung.
 It has a Wiederrufs-Rückgaberecht.
+
+Please open the Website in Firefox. 
+In other browsers the buttons are a bit buggy and the footer icons don't display correct.
