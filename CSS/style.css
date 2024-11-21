@@ -25,6 +25,10 @@ body {
     background-color: var(--background);
 }
 
+img {
+    width: 100%;
+}
+
 
 /* Grundstil für jedes Element */
 * {
