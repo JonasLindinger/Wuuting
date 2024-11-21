@@ -842,7 +842,8 @@ footer {
         display: none;
     }
 
-    .navbar .action_btn {
+    /* Spricht nur den action_btn an, der direkt auf die navbar folgt. Nicht den action_btn, wo noch elemente zwischen dem action_btn und der nav_bar sind. */
+    .navbar > .action_btn {
         display: none;
     }
 
